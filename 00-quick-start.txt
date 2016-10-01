@@ -1,0 +1,38 @@
+
+1 关联github
+* 注册 github 账户& 本地安装GIT
+* 将GitHub账号和本地Git客户端连接
+   ssh-keygen -t rsa -C "fanjun301@aliyun.com"
+* 将key配置到github里面去（git@github.com）
+
+2 配置属性
+git config --global user.name "frank fan"
+git config --global user.email "fanjun301@aliyun.com"
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+
+3 关联远程仓库（先在github建立repository）
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:frank-fan/git-demo.git
+git push -u origin master
+--------------------------------------------------------------------
+将已有的本地repository与远程的关联起来
+git remote add origin git@github.com:frank-fan/git-demo.git
+git push -u origin master
+
+# 4 本地分支与远程分支管理
+上传分支
+git push -u origin my_branch
+删除远程的一个分支
+git push origin   :branch1
+======================================
+获取远程分支
+git co -b branch1 origin/branch1
+将本地分支与远程分支关联起来
+git br--set-upstream-to=origin/branch1 branch1
+
+
